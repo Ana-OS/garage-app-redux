@@ -22,7 +22,7 @@ class CarsNew extends Component{
     onSubmit = (values) => { 
         // console.log(this.props.garage)
         this.props.createCar(values, this.props.garage, (car) => {
-            this.props.history.push('/cars'); // Navigate after submit 
+            this.props.history.push('/'); // Navigate after submit 
                 return car;
             }
         ); 

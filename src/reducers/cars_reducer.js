@@ -1,13 +1,13 @@
-import { FETCH_CARS } from '../actions';
+import { FETCH_CARS, SHOW_CAR } from '../actions';
 
 
-const carsReducer = (state = [], action)=> {
-    switch(action.type){
+export default function(state = [], action) {
+    switch (action.type) {
         case FETCH_CARS:
-            return action.payload
+            return action.payload;
+        case SHOW_CAR:
+            return [ action.payload ];
         default:
             return state
     }
 }
-
-export default carsReducer

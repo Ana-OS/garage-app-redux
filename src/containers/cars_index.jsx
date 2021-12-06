@@ -18,7 +18,7 @@ class CarsIndex extends Component{
         return this.props.cars.map((car) => {
             return (
                 <div key={car.id}>
-                    <Link to={`/cars/${car.id}`}>
+                    <Link to={`/cars/${car.id}`}  key={car.id}>
                         <div className="post-item"> 
                             <h3>{car.brand} - {car.model} </h3>    
                             <p>{car.owner}</p>
@@ -51,7 +51,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({fetchCars }, dispatch);
+    return bindActionCreators({ fetchCars }, dispatch);
   }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CarsIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(CarsIndex)
